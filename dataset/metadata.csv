@@ -1,0 +1,54 @@
+id,feature,descriptionLong,descriptionShort,type,Dataset
+name_long,name_long,Long Name,Long Name,Categorical,World
+iso_a2,iso_a2,ISO Country Code,ISO Country Code,Categorical,World
+continent,continent,Continent,Continent,Categorical,World
+region_un,region_un,Region UN,Region UN,Categorical,World
+subregion,subregion,Subregion,Subregion,Categorical,World
+type,type,Type of country,Type of country,Categorical,World
+area_km2,area_km2,Area km2,Area km2,Numeric,World
+pop,pop,Pouplation,Pouplation,Numeric,World
+lifeExp,lifeExp,Life expetancy,Life expetancy,Numeric,World
+gdpPercap,gdpPercap,Gross Domestic Product Per Capta,GDP Per Capta,Numeric,World
+prct_close_relat,prct_close_relat,Close Relations,Close Relations,Numeric,Not identified yet
+prct_rpt_crime,prct_rpt_crime,Crime,Crime,Numeric,Eurostat sdg_16_20
+prct_env_satis_high,prct_env_satis_high,Percentual of people with HIGH environment satisfaction,Environment Statisfaction HIGH,Numeric,Not identified yet
+prct_env_satis_med,prct_env_satis_med,Percentual of people with MEDIUM environment satisfaction,Environment Statisfaction MEDIUM,Numeric,Not identified yet
+prct_env_satis_low,prct_env_satis_low,Percentual of people with LOW environment satisfaction,Environment Statisfaction LOW,Numeric,Not identified yet
+gdp,gdp,Gross Domestic Product,Gross Domestic Product,Numeric,Not identified yet
+prct_job_satis_high,prct_job_satis_high,Percentual of people with HIGH job statistication,Job Satisfaction HIGH,Numeric,Eurostat ilc_pw05
+prct_job_satis_med,prct_job_satis_med,Percentual of people with MEDIUM job statistication,Job Satisfaction MEDIUM,Numeric,Eurostat ilc_pw05
+prct_job_satis_low,prct_job_satis_low,Percentual of people with LOW job statistication,Job Satisfaction LOW,Numeric,Eurostat ilc_pw05
+prct_leisure_satis_high,prct_leisure_satis_high,Percentual of people with HIGH leisure satisfaction,Leisure Satisfication HIGH,Numeric,Not identified yet
+prct_leisure_satis_med,prct_leisure_satis_med,Percentual of people with MEDIUM leisure satisfaction,Leisure Satisfication MEDIUM,Numeric,Not identified yet
+prct_leisure_satis_low,prct_leisure_satis_low,Percentual of people with LOW leisure satisfaction,Leisure Satisfication LOW,Numeric,Not identified yet
+life_expect,life_expect,Life expetancy in years,Life Expectancy (Years),Numeric,Not identified yet
+prct_life_satis_high,prct_life_satis_high,Percentual of people with HIGH life satisfaction,Life Satisfcation HIGH,Numeric,Eurostat ilc_pw05
+prct_life_satis_med,prct_life_satis_med,Percentual of people with MEDIUM life satisfaction,Life Satisfcation MEDIUM,Numeric,Eurostat ilc_pw05
+prct_life_satis_low,prct_life_satis_low,Percentual of people with LOW life satisfaction,Life Satisfcation LOW,Numeric,Eurostat ilc_pw05
+prct_low_savings,prct_low_savings,Low Savings,Low Savings,Numeric,Not identified yet
+prct_budget_veryhard,prct_budget_veryhard,Budget Very Hard,Budget Very Hard,Numeric,Not identified yet
+prct_budget_hard,prct_budget_hard,Budget Hard,Budget Hard,Numeric,Not identified yet
+prct_budget_somehard,prct_budget_somehard,Budget SomeHard,Budget SomeHard,Numeric,Not identified yet
+prct_budget_someeasy,prct_budget_someeasy,Budget SomeEasy,Budget SomeEasy,Numeric,Not identified yet
+prct_budget_easy,prct_budget_easy,Budget Easy,Budget Easy,Numeric,Not identified yet
+prct_budget_veryeasy,prct_budget_veryeasy,Budget Very Easy,Budget Very Easy,Numeric,Not identified yet
+median_income,median_income,Median Income,Median Income,Numeric,Eurostat ilc_di03
+prct_health_verygood,prct_health_verygood,Percentual of people with Very Good health perception,Health Percetion Very Good,Numeric,Not identified yet
+prct_health_good,prct_health_good,Percentual of people with Good health perception,Health Percetion Good,Numeric,Not identified yet
+prct_health_fair,prct_health_fair,Percentual of people with Fair health perception,Health Percetion Fair,Numeric,Not identified yet
+prct_health_bad,prct_health_bad,Percentual of people with Bad health perception,Health Percetion Bad,Numeric,Not identified yet
+prct_health_verybad,prct_health_verybad,Percentual of people with Very Bad health perception,Health Percetion Very Bad,Numeric,Not identified yet
+prct_rpt_pollution,prct_rpt_pollution,Pollution,Pollution,Numeric,Not identified yet
+total_pop,total_pop,Total population,Total population,Numeric,Not identified yet
+prct_yng_adt_pop,prct_yng_adt_pop,Percentage of population of young adults,Percentage of population of young adults,Numeric,Not identified yet
+legal_trust_rating,legal_trust_rating,Rating of trust in legal organs,Legal Trust Rating,Numeric,Eurostat ilc_pw04
+police_trust_rating,police_trust_rating,Rating of trust in policy,Police Trust Rating,Numeric,Eurostat ilc_pw04
+political_trust_rating,political_trust_rating,Rating of trust in politics,Political Trust Rating,Numeric,Eurostat ilc_pw04
+med_income_underemp,med_income_underemp,Median income for employed people,Median income for employed people,Numeric,Not identified yet
+unemp_rate,unemp_rate,Unemployment rate,Unemployment rate,Numeric,Not identified yet
+avg_temp,avg_temp,Average temperature,Average temperature,Numeric,Not identified yet
+avg_high_temp,avg_high_temp,Average high temperature,Average high temperature,Numeric,Not identified yet
+avg_low_temp,avg_low_temp,Average low temperature,Average low temperature,Numeric,Not identified yet
+avg_precipitation,avg_precipitation,Average precipitation,Average precipitation,Numeric,Not identified yet
+avg_hrs_worked,avg_hrs_worked,Average work hours per week,Average work hours per week,Numeric,Not identified yet
+geometry,geometry,Country shapes from World dataset,Country shapes,Poligon,World
