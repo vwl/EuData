@@ -70,11 +70,17 @@ page.work <- fluidPage(
     tags$li("In any map, the area covered is not smooth with the map below"),
     tags$li("In any map, limit to select a single feature"),
     tags$li("In any map, allow to features dynamicaly"),
-    tags$li("In 'Table' section the geometry coulmn coudn't be removed"),
+    tags$li("In 'Table' section the geometry coulmn coudn't be removed")
+  ),
+  h6("Done"),
+  tags$ul(
     tags$li("Create a metadata dataframe to allow more dinamism and code abstractionism to manipulate user interface, That would allow to avoid using hardcoded variable titles for example")
   ),
   h3("Questions to be answered"),
-  tags$li("Least developed countries, whats in common about then?")
+  tags$ul(
+    tags$li("Least developed countries, whats in common about then?")
+  )
+  
 )
 
 page.references <- fluidPage(
