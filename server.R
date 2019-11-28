@@ -45,7 +45,8 @@ shinyServer(function(input, output, session) {
   )
   
   output$table <- renderDataTable(
-    df.subset <- df[(names(df.subset) %in% input$show_vars)]
+    #Lookup in metata to search for column name in dataset
+    df.subset<-df.subset[df.metadata$descriptionShort %in% input$show_vars]
   )
   
   output$map = renderLeaflet({

@@ -51,7 +51,7 @@ page.map <- sidebarLayout(
 page.table <- fluidPage(
   sidebarLayout(
     sidebarPanel(
-      selectizeInput("show_vars","Columns:",choices = colnames(df), selected = c("name_long","gdp"), multiple=TRUE)
+      selectizeInput("show_vars","Columns:",choices = (df.metadata$descriptionShort), selected = c("name_long","gdp"), multiple=TRUE)
     ),
     mainPanel(
       dataTableOutput('table')
@@ -62,6 +62,7 @@ page.table <- fluidPage(
 page.work <- fluidPage(
   h3("Know issues, limitations, improvements"),
   tags$ul(
+    tags$li("In loadDataset function Malta is being removed from the dataset because it doesn't have a geom shape"),
     tags$li("In any, display feature description rather than feature id"),
     tags$li("In 'Correlation Analyser' limit to select only numeric values. But it can also show geoprahical region data from dataset "),
     tags$li("In 'Correlation Analyser' Different options for country label"),
