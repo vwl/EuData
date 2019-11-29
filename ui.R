@@ -35,9 +35,9 @@ page.intro <- fluidPage(
 page.corr <- fluidPage(
   sidebarPanel(
     checkboxInput("repelLabels", "Repels Label", value = FALSE),
-    selectizeInput("corLabel","Label", selected="iso_a2", choices = df.features, multiple= FALSE),
-    selectizeInput("corVarX","Variable X", selected="prct_leisure_satis_high", choices = df.features, multiple= FALSE),
-    selectizeInput("corVarY","Variable Y", selected="gdpPercap", choices = df.features, multiple= FALSE)
+    selectizeInput("corLabel","Label", selected="iso_a2", choices = df.features.all, multiple= FALSE),
+    selectizeInput("corVarX","Variable X", selected="prct_leisure_satis_high", choices = df.features.all, multiple= FALSE),
+    selectizeInput("corVarY","Variable Y", selected="gdpPercap", choices = df.features.all, multiple= FALSE)
   ),
   mainPanel(
     plotOutput(outputId = "scatterplot")

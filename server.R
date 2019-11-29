@@ -45,12 +45,7 @@ addMapLayer <- function(mapLayer,feature_name,title,input_name,color) {
 }
 
 shinyServer(function(input, output, session) {
-  output$addFeatureSelect <- renderUI({
-    
-    
-    selectizeInput("custom_features2","Columns2:", choices = df.features, selected = c("avg_hrs_worked"), multiple=TRUE)
-  })
-  
+
   output$metadata <- renderTable(
     df.metadata
   )
@@ -103,7 +98,7 @@ shinyServer(function(input, output, session) {
   })
   
   observeEvent(input$clean, {
-    for (feature in input$custom_features) {
+    for(i in seq(from=1, to=10, by=1)){ #Sorry...
       removeUI("#features > *")
     }
     updateSelectizeInput(session,inputId = "custom_features", selected = "")

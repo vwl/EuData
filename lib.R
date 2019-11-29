@@ -82,7 +82,7 @@ loadDataset <- function() {
   quote_type_feature <- metadata$feature
   names(quote_type_feature) <- quote_type_names
   
-  metadata.numeric<-metadata[df.metadata$type == 'Numeric',]
+  metadata.numeric<-metadata[metadata$type == 'Numeric',]
   quote_type_names <- metadata.numeric$descriptionShort
   quote_type_feature_numeric <- metadata.numeric$feature
   names(quote_type_feature_numeric) <- quote_type_names
