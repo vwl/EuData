@@ -9,18 +9,24 @@ page.intro <- fluidPage(
 
   The data used is gathered by <a href='https://ec.europa.eu/eurostat/statistics-explained/index.php/Self-perceived_health_statistics#Self-perceived_health'>EuroStat</a> 
   and synthetized in <a href='https://www.kaggle.com/roshansharma/europe-datasets'>Kaggle</a>.
-  This application goal is to provide a dynamic user interface to explore the dataset
        </article>"),
-  h3("The dataset"),
+ 
+  h3("Objectives"),
   HTML("<article>
-  Found in Kaggle, this dataset is a extract of many datasets provided by Eurostat, the statistical office of Europe. 
-  The year of the data is provided in the each file name, the many files contain one or more features by country.
-</article>"),
+       This application aims to explore R interactive graphics and plots, the main goal is to achieve a interactive map that allows exploration of the dataset.
+  </article>"),
+  
   h3("How to use this application"),
   HTML("<article>
   Navigate using the tabs on the top, the correlation analyser allows the user to pick two dataset features and analyse its correlation
-  the 'Economy and Employment' and 'Trust' tabs are interactive maps.
+  the 'Map' tab allows to analyse the dataset data ploted in interactive map
   the 'Table' tab will allow to interacively navigate the raw data.
+       </article>"),
+  
+  h3("The dataset"),
+  HTML("<article>
+       Found in Kaggle, this dataset is a extract of many datasets provided by Eurostat, the statistical office of Europe. 
+       The year of the data is provided in the each file name, the many files contain one or more features by country.
        </article>"),
   tableOutput("metadata")
 )
@@ -62,21 +68,22 @@ page.table <- fluidPage(
 
 page.work <- fluidPage(
   h3("Know issues, limitations, improvements"),
+  h5(tags$b("Open")),
   tags$ul(
     tags$li("In loadDataset function Malta is being removed from the dataset because it doesn't have a geom shape"),
-    tags$li("In any, display feature description rather than feature id"),
-    tags$li("In 'Correlation Analyser' limit to select only numeric values. But it can also show geoprahical region data from dataset "),
-    tags$li("In 'Correlation Analyser' Different options for country label"),
     tags$li("In 'Correlation Analyser' Add animation"),
-    tags$li("In any map, when the value is low color will be very light, which can be difficult to distinguish of countries with value of NA"),
     tags$li("In any map, the area covered is not smooth with the map below"),
-    tags$li("In any map, limit to select a single feature"),
-    tags$li("In any map, allow to features dynamicaly"),
     tags$li("In 'Table' section the geometry coulmn coudn't be removed")
   ),
-  h6("Done"),
+  h5(tags$b("Done")),
   tags$ul(
-    tags$li("Create a metadata dataframe to allow more dinamism and code abstractionism to manipulate user interface, That would allow to avoid using hardcoded variable titles for example")
+    tags$li("Create a metadata dataframe to allow more dinamism and code abstractionism to manipulate user interface, That would allow to avoid using hardcoded variable titles for example"),
+    tags$li("In 'Correlation Analyser' Different options for country label"),
+    tags$li("In 'Correlation Analyser' limit to select only numeric values. But it can also show geoprahical region data from dataset "),
+    tags$li("In any, display feature description rather than feature id"),
+    tags$li("In any map, when the value is low color will be very light, which can be difficult to distinguish of countries with value of NA"),
+    tags$li("In any map, limit to select a single feature"),
+    tags$li("In any map, allow to features dynamicaly"),
   ),
   h3("Questions to be answered"),
   tags$ul(
@@ -97,7 +104,8 @@ page.references <- fluidPage(
     tags$li(tags$a("Shiny App Dynamic UI",href="https://shiny.rstudio.com/articles/dynamic-ui.html")),
     tags$li(tags$a("Leaflet for R",href="https://rstudio.github.io/leaflet/colors.html")),
     tags$li(tags$a("Color palletes for R",href="https://www.datanovia.com/en/blog/top-r-color-palettes-to-know-for-great-data-visualization/")),
-    tags$li(tags$a("Select only numeric columns from a dataframe",href="https://stackoverflow.com/questions/5863097/selecting-only-numeric-columns-from-a-data-frame"))
+    tags$li(tags$a("Select only numeric columns from a dataframe",href="https://stackoverflow.com/questions/5863097/selecting-only-numeric-columns-from-a-data-frame")),
+    tags$li(tags$a("Selectize input labels",href="https://stackoverflow.com/questions/44929584/access-r-shiny-selectizeinput-labels"))
     
   )
 ) 
