@@ -1,4 +1,5 @@
 source("lib.R")
+
 page.intro <- fluidPage(
   h1("European Political Data"),
   HTML("<article>
@@ -40,7 +41,7 @@ page.corr <- fluidPage(
 page.map <- sidebarLayout(
   sidebarPanel(
     actionButton(inputId="clean","Clean"),
-    selectizeInput("custom_features","Columns:", choices = colnames(Filter(is.numeric,df)), selected = c("avg_hrs_worked"), multiple=TRUE),
+    selectizeInput("custom_features","Columns:", choices = df.features.numeric, selected = c("avg_hrs_worked"), multiple=TRUE),
     tags$div(id="features")
   ),
   mainPanel(
@@ -51,7 +52,7 @@ page.map <- sidebarLayout(
 page.table <- fluidPage(
   sidebarLayout(
     sidebarPanel(
-      selectizeInput("show_vars","Columns:",choices = (df.metadata$descriptionShort), selected = c("name_long","gdp"), multiple=TRUE)
+      selectizeInput("show_vars","Columns:",choices = (df.metadata$descriptionShort), selected = c("name_long","gdp"), multiple=TRUE),
     ),
     mainPanel(
       dataTableOutput('table')

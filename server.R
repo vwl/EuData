@@ -1,5 +1,8 @@
 addUiSlider <- function(feature) {
-  pallete_choices <- c("Wes Anderson - Zissou","Viridis","Heat","Reds","Blues","Purples","Greens") 
+  pallete_choices <- c("Wes Anderson - Zissou","Viridis","Heat","Reds","Blues","Purples","Greens")
+  
+  feature_look = df.metadata[df.metadata$descriptionShort == feature,]$feature
+  
   label = df.metadata.id[feature,]$descriptionShort
   tagList(
     tags$div(id="features",
@@ -14,6 +17,8 @@ addUiSlider <- function(feature) {
     )
   )
 }
+
+
 
 addMapLayer <- function(mapLayer,feature_name,title,input_name,color) {
   
@@ -40,6 +45,12 @@ addMapLayer <- function(mapLayer,feature_name,title,input_name,color) {
 }
 
 shinyServer(function(input, output, session) {
+  output$addFeatureSelect <- renderUI({
+    
+    
+    selectizeInput("custom_features2","Columns2:", choices = df.features, selected = c("avg_hrs_worked"), multiple=TRUE)
+  })
+  
   output$metadata <- renderTable(
     df.metadata
   )

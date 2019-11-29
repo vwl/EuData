@@ -78,12 +78,23 @@ loadDataset <- function() {
   metadata.id <- read.csv("dataset//metadata.csv",row.names = "id")
   metadata <- read.csv("dataset//metadata.csv",stringsAsFactors = TRUE)
   
+  quote_type_names <- metadata$descriptionShort
+  quote_type_feature <- metadata$feature
+  names(quote_type_feature) <- quote_type_names
+  
+  metadata.numeric<-metadata[df.metadata$type == 'Numeric',]
+  quote_type_names <- metadata.numeric$descriptionShort
+  quote_type_feature_numeric <- metadata.numeric$feature
+  names(quote_type_feature_numeric) <- quote_type_names
+  
+  
   assign("df", world2 , envir = .GlobalEnv)
   assign("df.eu", df , envir = .GlobalEnv)
   assign("df.metadata.id", metadata.id , envir = .GlobalEnv)
   assign("df.metadata", metadata , envir = .GlobalEnv)
+  assign("df.features.all", quote_type_feature , envir = .GlobalEnv)
+  assign("df.features.numeric", quote_type_feature_numeric , envir = .GlobalEnv)
   
-
 }
 
 loadDataset()
