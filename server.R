@@ -79,6 +79,8 @@ shinyServer(function(input, output, session) {
     
     thisOutput<- ggplot(df, aes_string(x = input$corVarX, y=input$corVarY)) +
       geom_smooth( method='lm', se = TRUE) +
+      xlab(df.metadata.id[input$corVarX,]$descriptionShort) +
+      ylab(df.metadata.id[input$corVarY,]$descriptionShort) +
       theme_minimal()
     label=df[[input$corLabel]]
     if (input$repelLabels) {
