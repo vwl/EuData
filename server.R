@@ -47,7 +47,8 @@ addMapLayer <- function(mapLayer,feature_name,title,input_name,color) {
 shinyServer(function(input, output, session) {
 
   output$metadata <- renderTable(
-    df.metadata
+    df.metadata,
+    striped = TRUE
   )
   
   output$table <- renderDataTable(

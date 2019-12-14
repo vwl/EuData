@@ -46,14 +46,15 @@ page.corr <- fluidPage(
 
 page.map <- sidebarLayout(
   sidebarPanel(
-    actionButton(inputId="clean","Clean"),
     selectizeInput("custom_features","Columns:", choices = df.features.numeric, selected = c("avg_hrs_worked"), multiple=TRUE),
-    tags$div(id="features")
+    tags$div(id="features"),
+    actionButton(inputId="clean","Reset")
   ),
   mainPanel(
     leafletOutput(outputId = "map")
   )
 )
+
 
 page.table <- fluidPage(
   sidebarLayout(

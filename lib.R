@@ -16,12 +16,14 @@ if(!require(RColorBrewer)) install.packages('RColorBrewer')
 
 
 loadDataset <- function() {
-  print(getwd())
+  
+  #Fahrenheith do celcius degrees
   FtoC <- function(c_degrees) {
     #return(c_degrees)
     return ((c_degrees-32) * 5/9)
   }
   
+  #Normalize data
   normalize <- function(x, scale=1) {
     return ((x - min(x)) / (max(x) - min(x)) * scale)
   }
@@ -29,6 +31,7 @@ loadDataset <- function() {
   dataset.folder = paste0('dataset//files//')
   dataset.files = list.files(path=dataset.folder, pattern="*.csv")
   
+  #Dynamically import multiple csv files
   for (i in 1:length(dataset.files)) {
     csv_file_name = dataset.files[i]
     variable_name=paste0("dataset.",strsplit(csv_file_name, ".csv")[[1]])
@@ -37,8 +40,10 @@ loadDataset <- function() {
     assign(variable_name,read.csv(csv_file_location, stringsAsFactors = F))
   }
   
+  #Clean up variables
   remove(i,dataset.folder,dataset.files,csv_file_location,csv_file_name,variable_name)
   
+  #Merge the datasets imported into a single one
   environment_variables=ls()
   dataset_variables=c()
   for (i in 1:length(environment_variables)) {
@@ -48,11 +53,12 @@ loadDataset <- function() {
       dataset_variables[[i]] <- get(variable_name)
     }
   }
-  
   df<-Reduce(function(x, y) merge(x, y, all=TRUE), as.list(dataset_variables))
-  df<-df[ , !(grepl("X",names(df)))] #Drop columns with NA
   
-  #Farenheit to Celcius
+  #Drop columns with NA
+  df<-df[ , !(grepl("X",names(df)))] 
+  
+  #Fahrenheit to Celcius
   df$avg_high_temp<-FtoC(df$avg_high_temp)
   df$avg_temp<-FtoC(df$avg_temp)
   df$avg_low_temp<-FtoC(df$avg_low_temp)
@@ -68,13 +74,12 @@ loadDataset <- function() {
   #df$unemp_rate<-df$unemp_rate*10
   df$political_trust_rating<-df$political_trust_rating*10
   
-  #Merge with map datasets
-  #levels(df$country)[levels(df$country)=="Czechia"] <- "Czech Republic"
-  df$country[df$country == "Czechia"] <- as.character("Czech Republic")
-  df<-df[!df$country == "Malta",]
-  
+  #Merge with World map dataset
+  df$country[df$country == "Czechia"] <- as.character("Czech Republic") #Fixes name difference
+  df<-df[!df$country == "Malta",] #Removes Malta since no geometry is provided
   world2 = base::merge(x = world, y = df, by.y = "country", by.x="name_long", all.x = TRUE)
   
+  #Metadata dataset to allow showing variable description rather than a unfriendly variable name   
   metadata.id <- read.csv("dataset//metadata.csv",row.names = "id")
   metadata <- read.csv("dataset//metadata.csv",stringsAsFactors = TRUE)
   
